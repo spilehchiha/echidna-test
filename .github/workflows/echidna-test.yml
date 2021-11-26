@@ -11,7 +11,7 @@ jobs:
   test-echidna:
     runs-on: ubuntu-latest
     env:
-      SOLC_REMAP: '@openzeppelin=/home/runner/work/echidna-test/echidna-test/node_modules/@openzeppelin'
+      SOLC_REMAP: '@openzeppelin/=/home/runner/work/echidna-test/echidna-test/node_modules/@openzeppelin/'
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
