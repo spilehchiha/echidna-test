@@ -1,1 +1,1 @@
-cryticArgs: ["--solc-remaps", "@openzeppelin=/home/runner/work/echidna-test/echidna-test/node_modules/@openzeppelin/"]
+cryticArgs: ["--solc-remaps", "@openzeppelin/=/home/runner/work/echidna-test/echidna-test/node_modules/@openzeppelin/"]
