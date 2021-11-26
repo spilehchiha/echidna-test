@@ -1,0 +1,7 @@
+name: echidna-test
+on:
+  push:
+    paths:
+      - 'contracts/**'
+      - '.github/workflows/echidna-test.yml'
+      - '*echidna.config.yml'
