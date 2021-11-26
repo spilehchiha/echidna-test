@@ -41,3 +41,16 @@ jobs:
         run: |
           ls -l node_modules/@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol
           pwd
+      - name: Compile contract with solc
+        run: |
+          solc --bin -o /tmp/solcoutput ${{ env.SOLC_REMAP }} contracts/tests/EchidnaTest.sol
+
+      - name: Run echidna test simpile
+        run: |
+          echidna-test contracts/tests/EchidnaERC1820.sol --contract EchidnaERC1820 --config echidna.config.yml
+
+      - name: Run echina tests
+        run: |
+          echo cryticArgs: \[\"--solc-remaps\", \"${{ env.SOLC_REMAP }}\"\] > remap.config.yml
+          cat remap.config.yml
+          echidna-test contracts/tests/EchidnaTest.sol --contract EchidnaTest --config default-echidna.config.yml
