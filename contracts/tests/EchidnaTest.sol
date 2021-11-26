@@ -15,7 +15,7 @@ contract EchidnaTest is UUPSUpgradeable, Initializable {
     //    return true;
     //}
     function _authorizeUpgrade(address) internal view override {
-        require(msg.sender != address(0));
+        //require(msg.sender != address(0));
     }
     function echidna_test() external pure returns (bool) {
         return true;
