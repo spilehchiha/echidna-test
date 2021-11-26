@@ -27,7 +27,7 @@ jobs:
           pip3 show slither-analyzer
       - name: Install solc
         env:
-          SOLC_VERSION: 0.8.4
+          SOLC_VERSION: 0.8.2
         run: |
           pip install solc-select
           solc-select install ${{ env.SOLC_VERSION }}
@@ -38,6 +38,10 @@ jobs:
           sudo tar -xf /tmp/echidna-test.tar.gz -C /usr/bin
           sudo chmod +x /usr/bin/echidna-test
       - name: List openzeppeline files
+        run: |
+          ls -l node_modules/@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol
+          pwd
+      - name: Move openzeppeline files
         run: |
           ls -l node_modules/@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol
           pwd
