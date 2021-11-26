@@ -5,3 +5,17 @@ on:
       - 'contracts/**'
       - '.github/workflows/echidna-test.yml'
       - '*echidna.config.yml'
+
+jobs:
+  test-echidna:
+    runs-on: ubuntu-latest
+    env:
+      SOLC_REMAP: '@openzeppelin=/home/runner/work/echidna-test/echidna-test/node_modules/@openzeppelin'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.6
+          architecture: 'x86'
